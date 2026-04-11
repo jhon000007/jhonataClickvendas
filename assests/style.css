@@ -1,0 +1,239 @@
+/* Click Vendas – style.css */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: #f0f4f8;
+  color: #1e293b;
+  min-height: 100vh;
+}
+
+/* ── NAVBAR ── */
+.barra-navegacao {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: #1a3a7c;
+  padding: 0 2rem;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.marca-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-right: 1rem;
+}
+
+.links-nav { display: flex; list-style: none; gap: 4px; flex: 1; }
+
+.links-nav a {
+  color: rgba(255,255,255,.75);
+  font-size: .95rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background .2s, color .2s;
+}
+
+.links-nav a:hover,
+.links-nav a.ativo { color: white; background: rgba(255,255,255,.12); }
+
+.usuario-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,.85);
+  font-size: .9rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.2);
+  border: 2px solid rgba(255,255,255,.4);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-style: normal; color: white;
+}
+
+/* ── LAYOUT ── */
+.conteudo { max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem 3rem; }
+
+.boas-vindas { color: #2563eb; font-weight: 700; margin-bottom: .75rem; }
+
+/* ── BANNER ── */
+.banner-destaque {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: linear-gradient(120deg, #1e3a8a, #2563eb);
+  border-radius: 24px;
+  padding: 1.8rem 2.2rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.75rem;
+  min-height: 140px;
+}
+
+.texto-destaque { flex: 1; }
+.texto-destaque h1 { font-size: 1.6rem; font-weight: 800; margin-bottom: .6rem; }
+.texto-destaque ul { list-style: disc; padding-left: 1.2rem; font-size: .87rem; line-height: 1.65; color: rgba(255,255,255,.88); }
+
+.estatisticas-destaque { 
+    display: flex; 
+    gap: 1rem; 
+    margin-left: 30px;
+    margin-right: 13rem;
+}
+.estatistica { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 2px; }
+.label-estatistica { 
+    font-size: .72rem; 
+    color: rgba(255,255,255,.75); 
+    font-weight: 600; }
+.valor-estatistica { 
+    font-size: 2.8rem; 
+    font-weight: 800; 
+    line-height: 1; }
+
+.imagem-destaque {
+  width: 250px;
+  position: absolute;
+  right: -3.1rem; 
+  bottom: -60px;
+  transform: rotate(-20deg);
+  opacity: .92; pointer-events: none;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,.3));
+}
+
+/* ── BARRA DE AÇÕES ── */
+.barra-acoes { 
+    display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: 10px;
+}
+
+.campo-busca { flex: 1;  }
+
+.input-busca {
+    
+  align-self: 2;
+  padding: 12px 16px;
+  border: none; border-radius: 999px;
+  background: white; font-family: inherit; font-size: .95rem;
+  color: #1e293b; outline: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,.08);
+  transition: box-shadow .2s;
+  width: 100%;
+}
+.input-busca::placeholder { color: #94a3b8; }
+.input-busca:focus {
+    box-shadow: 0 0 0 3px rgba(37,99,235,.2); 
+    flex:1;
+    width: 100%;
+}
+
+
+.btn-filtro {
+  padding: 12px 32px;
+  border-radius: 999px; border: none; cursor: pointer;
+  font-family: inherit; font-weight: 800; font-size: .9rem;
+  background: #1a3a7c; color: white;
+  transition: opacity .2s;
+  display: flex;
+}
+.btn-filtro:hover { opacity: .88; }
+
+.btn-cadastrar {
+  display: flex; align-items: center; gap: 6px;
+  padding: 12px 22px;
+  background: white; border: 2px solid #2563eb; border-radius: 999px;
+  color: #2563eb; font-family: inherit; font-weight: 800; font-size: .9rem;
+  text-decoration: none; white-space: nowrap;
+  transition: background .2s, color .2s;
+}
+.btn-cadastrar:hover { background: #2563eb; color: white; }
+
+/* ── CONTROLE DE VISUALIZAÇÃO ── */
+.controle-visualizacao { display: flex; gap: 4px; margin-bottom: .75rem; }
+
+.btn-visualizacao {
+  padding: 6px 14px;
+  border: none; border-radius: 8px;
+  background: transparent; color: #94a3b8;
+  font-family: inherit; font-weight: 600; font-size: .85rem;
+  cursor: pointer; transition: background .15s, color .15s;
+}
+.btn-visualizacao:hover,
+.btn-visualizacao.ativo { background: white; color: #2563eb; }
+
+/* ── LISTA DE PRODUTOS ── */
+.lista-produtos {
+  background: #e8eef6;
+  border-radius: 24px;
+  padding: 1rem 1.2rem .5rem;
+}
+
+.cabecalho-lista,
+.linha-produto {
+  display: grid;
+  grid-template-columns: 35% 15% 18% 14% 18%;
+  align-items: center;
+}
+
+.cabecalho-lista { padding: .5rem 1rem .75rem; }
+.cabecalho-lista span { font-size: .78rem; font-weight: 800; letter-spacing: .6px; color: #2563eb; }
+.cabecalho-lista .col-preco,
+.cabecalho-lista .col-estoque,
+.cabecalho-lista .col-status { text-align: center; }
+
+.linha-produto {
+  background: white;
+  text-decoration: none; color: inherit;
+  padding: .85rem 1rem;
+  border-bottom: 1px solid rgba(0,0,0,.04);
+  position: relative; transition: box-shadow .18s;
+}
+.linha-produto:first-of-type { border-radius: 14px 14px 0 0; }
+.linha-produto:last-of-type  { border-bottom: none; border-radius: 0 0 14px 14px; }
+.linha-produto:hover { box-shadow: 0 2px 14px rgba(37,99,235,.1); z-index: 1; }
+
+.col-produto { display: flex; align-items: center; gap: 14px; }
+.col-produto img { width: 52px; height: 52px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
+
+.info-produto { display: flex; flex-direction: column; gap: 2px; }
+.nome-produto { font-weight: 700; color: #2563eb; font-size: .97rem; }
+.numero-produto { font-size: .78rem; color: #94a3b8; font-weight: 600; }
+
+.col-preco   { text-align: center; font-weight: 700; color: #1a3a7c; }
+.col-estoque { text-align: center; color: #475569; font-weight: 600; font-size: .92rem; }
+.col-status  { text-align: center; }
+
+/* ── BADGES ── */
+.badge { display: inline-block; padding: 4px 14px; border-radius: 999px; font-size: .78rem; font-weight: 700; }
+.badge-esportivo { background: #e0ecfa; color: #0369a1; }
+.badge-masculino  { background: #ede9fe; color: #5b21b6; }
+.badge-feminino   { background: #fce7f3; color: #9d174d; }
+.badge-infantil   { background: #dcfce7; color: #15803d; }
+.badge-calcados   { background: #fef3c7; color: #92400e; }
+
+/* ── STATUS ── */
+.status { display: inline-block; padding: 5px 14px; border-radius: 999px; font-size: .82rem; font-weight: 700; }
+.status.ativo   { background: #dcfce7; color: #15803d; }
+.status.inativo { background: #fee2e2; color: #b91c1c; }
+

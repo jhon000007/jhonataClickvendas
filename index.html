@@ -1,41 +1,147 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-<meta charset="UTF-8">
-<title>Listagem de Produtos</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Vendas – Listagem de Produtos</title>
+
+    <link rel="stylesheet" href="/assests/style.css">
 </head>
 
 <body>
 
-<header>
-<h1>Produtos</h1>
-<p>Gerencie os produtos da sua loja</p>
+    <!-- ===== BARRA DE NAVEGAÇÃO ===== -->
+    <nav class="barra-navegacao">
 
-<div class="acoes">
-<input type="text" placeholder="Buscar produto...">
-<a href="cadastro.html" class="btn">+ Novo Produto</a>
-</div>
-</header>
+        <div class="marca-nav" >
+            <span class="icone-nav">🛒</span>
+            <span class="logo-nav">Click<strong>Vendas</strong></span>
+        </div>
 
-<section class="tabela">
+        <ul class="links-nav">
+            <li><a href="#" class="ativo">Listagem</a></li>
+            <li><a href="#">Vendidos</a></li>
+            <li><a href="#">Relatórios</a></li>
+            <li><a href="#">Financeiro</a></li>
+        </ul>
 
-<div class="produto" onclick="abrirDetalhes()">
-<span>Camiseta Básica</span>
-<span>R$ 49,90</span>
-<span>Estoque: 12</span>
-<span class="ativo">Ativo</span>
-</div>
+        <div class="usuario-nav">
+            <span>Lojinha do João</span>
+            <div class="avatar">J</div>
+        </div>
 
-<div class="produto" onclick="abrirDetalhes()">
-<span>Tênis Casual</span>
-<span>R$ 199,90</span>
-<span>Estoque: 5</span>
-<span class="inativo">Inativo</span>
-</div>
+    </nav>
 
-</section>
+    <!-- ===== CONTEÚDO ===== -->
+    <main class="conteudo">
 
-<script src="script.js"></script>
+        <p class="boas-vindas">Bem Vindo João!</p>
+
+        <!-- DESTAQUE -->
+        <div class="banner-destaque">
+
+            <div class="texto-destaque">
+                <h1>Listagem de Produtos</h1>
+
+                <ul>
+                    <li>Aqui estão todos os produtos cadastrados na sua loja.</li>
+                    <li>Use a busca ou filtros para localizar itens rapidamente.</li>
+                </ul>
+            </div>
+
+            <div class="estatisticas-destaque">
+
+                <div class="estatistica">
+                    <span class="label-estatistica">cadastrados</span>
+                    <span class="valor-estatistica">5</span>
+                </div>
+
+                <div class="estatistica">
+                    <span class="label-estatistica">estoque baixo</span>
+                    <span class="valor-estatistica">2</span>
+                </div>
+
+                <div class="estatistica">
+                    <span class="label-estatistica">ativos</span>
+                    <span class="valor-estatistica">4</span>
+                </div>
+
+            </div>
+
+            <img class="imagem-destaque" src="/assests/caixa.png">
+
+        </div>
+
+        <!-- AÇÕES -->
+        <div class="barra-acoes">
+
+            <div class="campo-busca">
+                <input type="text" class="input-busca" placeholder="Pesquisar">
+            </div>
+
+            <button class="btn-filtro ativo">TODOS</button>
+
+            <a href="cadastro.html" class="btn-cadastrar">
+                Cadastrar Produto <span>+</span>
+            </a>
+
+        </div>
+
+        <!-- VISUALIZAÇÃO -->
+        <div class="controle-visualizacao">
+
+            <button class="btn-visualizacao ativo">Lista</button>
+            <button class="btn-visualizacao">Grade</button>
+
+        </div>
+
+        <!-- LISTA -->
+        <div class="lista-produtos">
+
+            <div class="cabecalho-lista">
+                <span class="col-produto">PRODUTOS</span>
+                <span class="col-categoria">CATEGORIA</span>
+                <span class="col-preco">PREÇO</span>
+                <span class="col-estoque">ESTOQUE</span>
+                <span class="col-status">STATUS</span>
+            </div>
+            <!-- PRODUTO -->
+            <a href="detalhes.html" class="linha-produto">
+                <div class="col-produto">
+                    <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=56&h=56&fit=crop">
+                    <div class="info-produto">
+                        <span class="nome-produto">Camisa Brasil</span>
+                        <span class="numero-produto">Nº1823901</span>
+                    </div>
+                </div>
+                <div class="col-categoria">
+                    <span class="badge badge-esportivo">Esportivo</span>
+                </div>
+                <div class="col-preco">R$ 120,00</div>
+                <div class="col-estoque">20 Und</div>
+                <div class="col-status">
+                    <span class="status ativo">Ativo ●</span>
+                </div>
+            </a>
+            <a href="detalhes.html" class="linha-produto">
+                <div class="col-produto">
+                    <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=56&h=56&fit=crop">
+                    <div class="info-produto">
+                        <span class="nome-produto">Camisa Brasil</span>
+                        <span class="numero-produto">Nº1823901</span>
+                    </div>
+                </div>
+                <div class="col-categoria">
+                    <span class="badge badge-esportivo">Esportivo</span>
+                </div>
+                <div class="col-preco">R$ 120,00</div>
+                <div class="col-estoque">20 Und</div>
+                <div class="col-status">
+                    <span class="status ativo">Ativo ●</span>
+                </div>
+            </a>
+        </div>
+    </main>
 </body>
 </html>
