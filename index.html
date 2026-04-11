@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Listagem de Produtos</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Produtos</h1>
+<p>Gerencie os produtos da sua loja</p>
+
+<div class="acoes">
+<input type="text" placeholder="Buscar produto...">
+<a href="cadastro.html" class="btn">+ Novo Produto</a>
+</div>
+</header>
+
+<section class="tabela">
+
+<div class="produto" onclick="abrirDetalhes()">
+<span>Camiseta Básica</span>
+<span>R$ 49,90</span>
+<span>Estoque: 12</span>
+<span class="ativo">Ativo</span>
+</div>
+
+<div class="produto" onclick="abrirDetalhes()">
+<span>Tênis Casual</span>
+<span>R$ 199,90</span>
+<span>Estoque: 5</span>
+<span class="inativo">Inativo</span>
+</div>
+
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
