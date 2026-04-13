@@ -20,10 +20,10 @@
         </div>
 
         <ul class="links-nav">
-            <li><a href="#" class="ativo">Listagem</a></li>
-            <li><a href="#">Vendidos</a></li>
-            <li><a href="#">Relatórios</a></li>
-            <li><a href="#">Financeiro</a></li>
+            <li><a href="#listagem" class="ativo">Listagem</a></li>
+            <li><a href="#vendidos">Vendidos</a></li>
+            <li><a href="#relatorios">Relatórios</a></li>
+            <li><a href="#financeiro">Financeiro</a></li>
         </ul>
 
         <div class="usuario-nav">
@@ -33,7 +33,7 @@
 
     </nav>
 
-    <!-- ===== CONTEÚDO ===== -->
+    <!-- CONTEÚDO -->
     <main class="conteudo">
 
         <p class="boas-vindas">Bem Vindo João!</p>
@@ -97,8 +97,8 @@
         </div>
 
         <!-- LISTA -->
-        <div class="lista-produtos">
-
+        <div class="lista-produtos" id="listagem">
+            <h3>PRODUTOS</h3>
             <div class="cabecalho-lista">
                 <span class="col-produto">PRODUTOS</span>
                 <span class="col-categoria">CATEGORIA</span>
@@ -148,141 +148,15 @@
                 </div>
             </a>
             <!-- GRÁFICO DE VENDAS -->
-            <div class="grafico-section">
-
-                <div class="grafico-header">
-                    <p class="grafico-titulo">Vendas por período</p>
-                    <div style="display:flex;gap:8px;align-items:center;">
-                        <button class="btn-regen" onclick="regenerar()">↻ Novos dados</button>
-                        <div class="grafico-filtros">
-                            <button class="filtro-btn ativo" onclick="setFiltro(this,'7d')">7 dias</button>
-                            <button class="filtro-btn" onclick="setFiltro(this,'30d')">30 dias</button>
-                            <button class="filtro-btn" onclick="setFiltro(this,'90d')">3 meses</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="metricas-grafico">
-                    <div class="metrica-card">
-                        <p class="metrica-label">Total de vendas</p>
-                        <p class="metrica-valor" id="m-total">—</p>
-                        <p class="metrica-delta" id="m-total-d"></p>
-                    </div>
-                    <div class="metrica-card">
-                        <p class="metrica-label">Pedidos</p>
-                        <p class="metrica-valor" id="m-pedidos">—</p>
-                        <p class="metrica-delta" id="m-pedidos-d"></p>
-                    </div>
-                    <div class="metrica-card">
-                        <p class="metrica-label">Ticket médio</p>
-                        <p class="metrica-valor" id="m-ticket">—</p>
-                        <p class="metrica-delta" id="m-ticket-d"></p>
-                    </div>
-                </div>
-
-                <div class="legenda-grafico">
-                    <span class="legenda-item"><span class="legenda-dot azul"></span>Receita (R$)</span>
-                    <span class="legenda-item"><span class="legenda-dot verde"></span>Pedidos</span>
-                </div>
-
-                <div style="position:relative; width:100%; height:260px;">
-                    <canvas id="vendas-chart"></canvas>
-                </div>
+            <div id="relatorios" class="grafico-section">
+                <h3>RELATÓRIOS DE VENDAS</h3>
+                <img class="grafico-1" src="/assests/grafico-1.png" alt="">
+               
+            </div>
 
             </div>
 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-            <script>
-                const rnd = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-                const fmtBRL = v => 'R$ ' + v.toLocaleString('pt-BR');
-                const delta = () => {
-                    const v = rnd(-18, 32);
-                    return { txt: (v >= 0 ? '↑ ' : '↓ ') + Math.abs(v) + '% vs período anterior', cls: v >= 0 ? 'delta-up' : 'delta-down' };
-                };
-
-                let periodoAtual = '7d';
-                let dadosGerados = {};
-                let chart;
-
-                function gerarDados() {
-                    const soma = arr => arr.reduce((a, b) => a + b, 0);
-
-                    const r7 = Array.from({ length: 7 }, () => rnd(200, 950));
-                    const p7 = r7.map(v => Math.max(1, Math.round(v / rnd(80, 200))));
-
-                    const r30 = Array.from({ length: 4 }, () => rnd(2000, 7000));
-                    const p30 = r30.map(v => Math.max(3, Math.round(v / rnd(80, 200))));
-
-                    const r90 = Array.from({ length: 3 }, () => rnd(8000, 22000));
-                    const p90 = r90.map(v => Math.max(10, Math.round(v / rnd(80, 200))));
-
-                    dadosGerados = {
-                        '7d': { labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'], receita: r7, pedidos: p7, total: fmtBRL(soma(r7)), pedidosTotal: soma(p7), ticket: fmtBRL(Math.round(soma(r7) / soma(p7))), d1: delta(), d2: delta(), d3: delta() },
-                        '30d': { labels: ['Sem 1', 'Sem 2', 'Sem 3', 'Sem 4'], receita: r30, pedidos: p30, total: fmtBRL(soma(r30)), pedidosTotal: soma(p30), ticket: fmtBRL(Math.round(soma(r30) / soma(p30))), d1: delta(), d2: delta(), d3: delta() },
-                        '90d': { labels: ['Jan', 'Fev', 'Mar'], receita: r90, pedidos: p90, total: fmtBRL(soma(r90)), pedidosTotal: soma(p90), ticket: fmtBRL(Math.round(soma(r90) / soma(p90))), d1: delta(), d2: delta(), d3: delta() }
-                    };
-                }
-
-                function atualizarMetricas(periodo) {
-                    const d = dadosGerados[periodo];
-                    document.getElementById('m-total').textContent = d.total;
-                    document.getElementById('m-pedidos').textContent = d.pedidosTotal;
-                    document.getElementById('m-ticket').textContent = d.ticket;
-                    const el1 = document.getElementById('m-total-d');
-                    const el2 = document.getElementById('m-pedidos-d');
-                    const el3 = document.getElementById('m-ticket-d');
-                    el1.textContent = d.d1.txt; el1.className = 'metrica-delta ' + d.d1.cls;
-                    el2.textContent = d.d2.txt; el2.className = 'metrica-delta ' + d.d2.cls;
-                    el3.textContent = d.d3.txt; el3.className = 'metrica-delta ' + d.d3.cls;
-                }
-
-                function renderChart(periodo) {
-                    const d = dadosGerados[periodo];
-                    if (chart) chart.destroy();
-                    chart = new Chart(document.getElementById('vendas-chart'), {
-                        type: 'line',
-                        data: {
-                            labels: d.labels,
-                            datasets: [
-                                { label: 'Receita (R$)', data: d.receita, borderColor: '#185FA5', backgroundColor: 'rgba(24,95,165,0.07)', borderWidth: 2, pointBackgroundColor: '#185FA5', pointRadius: 4, tension: 0.38, fill: true, yAxisID: 'y' },
-                                { label: 'Pedidos', data: d.pedidos, borderColor: '#1D9E75', backgroundColor: 'rgba(29,158,117,0.06)', borderWidth: 2, pointBackgroundColor: '#1D9E75', pointRadius: 4, borderDash: [5, 4], tension: 0.38, fill: false, yAxisID: 'y2' }
-                            ]
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            animation: { duration: 500 },
-                            plugins: {
-                                legend: { display: false },
-                                tooltip: { callbacks: { label: ctx => ctx.datasetIndex === 0 ? ' R$ ' + ctx.parsed.y.toLocaleString('pt-BR') : ' ' + ctx.parsed.y + ' pedidos' } }
-                            },
-                            scales: {
-                                x: { grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { color: '#888', font: { size: 12 } } },
-                                y: { position: 'left', grid: { color: 'rgba(128,128,128,0.1)' }, ticks: { color: '#888', font: { size: 12 }, callback: v => v >= 1000 ? 'R$' + (v / 1000).toFixed(0) + 'k' : 'R$' + v } },
-                                y2: { position: 'right', grid: { drawOnChartArea: false }, ticks: { color: '#1D9E75', font: { size: 12 }, stepSize: 1 } }
-                            }
-                        }
-                    });
-                }
-
-                function setFiltro(btn, periodo) {
-                    document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('ativo'));
-                    btn.classList.add('ativo');
-                    periodoAtual = periodo;
-                    atualizarMetricas(periodo);
-                    renderChart(periodo);
-                }
-
-                function regenerar() {
-                    gerarDados();
-                    atualizarMetricas(periodoAtual);
-                    renderChart(periodoAtual);
-                }
-
-                gerarDados();
-                atualizarMetricas('7d');
-                renderChart('7d');
-            </script>
+            
 
         </div>
     </main>
