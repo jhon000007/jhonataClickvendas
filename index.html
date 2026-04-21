@@ -22,10 +22,11 @@
         </div>
 
         <ul class="links-nav">
-            <li><a href="#listagem" class="ativo">Listagem</a></li>
-            <li><a href="#vendidos">Vendidos</a></li>
+            <li><a href="#descrição">Descrição</a></li>
+            <li><a href="#vendidos">Últimos vendidos</a></li>
+            <li><a href="#listagem">Produtos</a></li>
             <li><a href="#relatorios">Relatórios</a></li>
-            <li><a href="#financeiro">Financeiro</a></li>
+            <li><a href="#planos">Planos</a></li>
         </ul>
 
         <div class="usuario-nav">
@@ -75,25 +76,65 @@
 
         </div>
         <!--Descrição-->
-       
-        <div class="descricao">
-             <h3 class="subtitulo">Descrição do Sistema</h3>
+
+        <div class="descricao" id="descrição">
+            <h3 class="subtitulo">Descrição do Sistema</h3>
             <span class="descricao-texto">
-                O ClickVendas é um sistema web desenvolvido para auxiliar pequenas lojas no controle e organização de seus produtos de maneira simples, prática e intuitiva. Pensado especialmente para lojistas que necessitam de agilidade no dia a dia, o aplicativo prioriza uma experiência clara, com navegação direta e funcionalidades essenciais, evitando complexidade desnecessária.
+                O ClickVendas é um sistema web desenvolvido para auxiliar pequenas lojas no controle e organização de
+                seus produtos de maneira simples, prática e intuitiva. Pensado especialmente para lojistas que
+                necessitam de agilidade no dia a dia, o aplicativo prioriza uma experiência clara, com navegação direta
+                e funcionalidades essenciais, evitando complexidade desnecessária.
             </span>
             <span class="descricao-texto">
-                O sistema foi estruturado utilizando apenas recursos de menu interno e navegação entre páginas, sem a utilização de JavaScript, garantindo leveza, fácil manutenção e maior compatibilidade entre navegadores. Dessa forma, o usuário consegue acessar rapidamente as principais funcionalidades através de índices de navegação organizados, mantendo o fluxo de uso contínuo e objetivo.
+                O sistema foi estruturado utilizando apenas recursos de menu interno e navegação entre páginas, sem a
+                utilização de JavaScript, garantindo leveza, fácil manutenção e maior compatibilidade entre navegadores.
+                Dessa forma, o usuário consegue acessar rapidamente as principais funcionalidades através de índices de
+                navegação organizados, mantendo o fluxo de uso contínuo e objetivo.
             </span>
         </div>
 
-        <!--Produtos vendidos-->
-        <div class="ultimos_vendidos">
-            <img src="assests/produtos/camisaNike.jpg" alt="imagem-produto" class="imagem-prod-vend">
-            <img src="assests/fogo.png" alt="fire" class="fire">
-            <span class="nome-produto">CAMISA NIKE</span>
+        <!--Ultimos vendidos-->
+        <h3 class="subtitulo" id="vendidos">Últimos Vendidos</h3>
+        <div class="lista-ultimos">
+            <div class="ultimos_vendidos">
+                <img src="assests/produtos/camisaNike.jpg" alt="imagem-produto" class="imagem-prod-vend">
+                <span class="nome-produto">CAMISA NIKE
+                    <img src="assests/fogo.png" alt="fire" class="fire">
+                </span>
+            </div>
+            <div class="ultimos_vendidos">
+                <img src="assests/produtos/tenis_lebron.jpeg" alt="imagem-produto" class="imagem-prod-vend">
+                <span class="nome-produto">TENIS LEBRON JAMES
+                    <img src="assests/fogo.png" alt="fire" class="fire">
+                </span>
+            </div>
+            <div class="ultimos_vendidos">
+                <img src="assests/produtos/short_academia.jpg" alt="imagem-produto" class="imagem-prod-vend">
+                <span class="nome-produto">SHORT ACADEMIA
+                    <img src="assests/fogo.png" alt="fire" class="fire">
+                </span>
+            </div>
+            <div class="ultimos_vendidos">
+                <img src="assests/produtos/garrafa.jpg" alt="imagem-produto" class="imagem-prod-vend">
+                <span class="nome-produto">GARRAFA
+                    <img src="assests/fogo.png" alt="fire" class="fire">
+                </span>
+            </div>
+            <div class="ultimos_vendidos">
+                <img src="assests/produtos/strap.jpg" alt="imagem-produto" class="imagem-prod-vend">
+                <span class="nome-produto">STRAP
+                    <img src="assests/fogo.png" alt="fire" class="fire">
+                </span>
+            </div>
         </div>
-        <!-- AÇÕES -->
-        <div class="barra-acoes">
+
+
+        
+        
+        <!-- LISTA -->
+        <div class="lista-produtos" id="listagem">
+            <h3>PRODUTOS</h3>
+            <div class="barra-acoes">
 
             <div class="campo-busca">
                 <input type="text" class="input-busca" placeholder="Pesquisar">
@@ -106,18 +147,7 @@
             </a>
 
         </div>
-
-        <!-- VISUALIZAÇÃO -->
-        <div class="controle-visualizacao">
-
-            <button class="btn-visualizacao ativo">Lista</button>
-            <button class="btn-visualizacao">Grade</button>
-
-        </div>
-
-        <!-- LISTA -->
-        <div class="lista-produtos" id="listagem">
-            <h3>PRODUTOS</h3>
+            
             <div class="cabecalho-lista">
                 <span class="col-produto">PRODUTOS</span>
                 <span class="col-categoria">CATEGORIA</span>
@@ -170,12 +200,29 @@
             <div id="relatorios" class="grafico-section">
                 <h3>RELATÓRIOS DE VENDAS</h3>
                 <img class="grafico-1" src="/assests/grafico-1.png" alt="">
-               
             </div>
 
-            </div>
+            <!-- PLANOS DE VENDA -->
+            <div id="planos" class="div_planos">
+                <h3>PLANOS MENSAIS</h3>
 
-            
+                <div class="planos-container">
+                    
+                    <div class="plan1">
+                        <p class="preco">R$ 29,90</p>
+                        <h4>Plano Básico</h4>
+                    </div>
+
+                    <div class="plan2">
+                        <p class="preco">R$ 49,90</p>
+                        <h4>Plano Intermediário</h4>
+                    </div>
+                    <div class="plan3">
+                        <p class="preco">R$ 69,90</p>
+                        <h4>Plano Avançado</h4>
+                    </div>
+                    
+                </div>
 
         </div>
     </main>
