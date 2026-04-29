@@ -5,15 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Click Vendas – Listagem de Produtos</title>
-
     <link rel="stylesheet" href="/assests/style.css">
 </head>
 
 <body>
 
-    <!-- ===== BARRA DE NAVEGAÇÃO ===== -->
+    <!-- NAVBAR -->
     <nav class="barra-navegacao">
-
         <div class="marca-nav">
             <span class="icone-nav">
                 <img src="/assests/logo_clickvendas1.png" alt="logo-nav">
@@ -22,7 +20,7 @@
         </div>
 
         <ul class="links-nav">
-            <li><a href="#descrição">Descrição</a></li>
+            <li><a href="#descricao">Descrição</a></li>
             <li><a href="#vendidos">Últimos vendidos</a></li>
             <li><a href="#listagem">Produtos</a></li>
             <li><a href="#relatorios">Relatórios</a></li>
@@ -33,7 +31,6 @@
             <span>Lojinha do João</span>
             <div class="avatar">J</div>
         </div>
-
     </nav>
 
     <!-- CONTEÚDO -->
@@ -41,12 +38,10 @@
 
         <p class="subtitulo">Bem Vindo João!</p>
 
-        <!-- DESTAQUE SQUARE AZUL-->
+        <!-- BANNER -->
         <div class="banner-destaque">
-
             <div class="texto-destaque">
                 <h1>Listagem de Produtos</h1>
-
                 <ul>
                     <li>Aqui estão todos os produtos cadastrados na sua loja.</li>
                     <li>Use a busca ou filtros para localizar itens rapidamente.</li>
@@ -54,31 +49,26 @@
             </div>
 
             <div class="estatisticas-destaque">
-
                 <div class="estatistica">
                     <span class="label-estatistica">cadastrados</span>
                     <span class="valor-estatistica">5</span>
                 </div>
-
                 <div class="estatistica">
                     <span class="label-estatistica">estoque baixo</span>
                     <span class="valor-estatistica">2</span>
                 </div>
-
                 <div class="estatistica">
                     <span class="label-estatistica">ativos</span>
                     <span class="valor-estatistica">4</span>
                 </div>
-
             </div>
 
-            <img class="imagem-destaque" src="/assests/caixa.png">
-
+            <img class="imagem-destaque" src="/assests/caixa.png" alt="caixa">
         </div>
-        <!--Descrição-->
 
-        <div class="descricao" id="descrição">
-            <h3 class="subtitulo">Descrição do Sistema</h3>
+        <!-- DESCRIÇÃO -->
+        <div class="descricao" id="descricao">
+            <h3>Descrição do Sistema</h3>
             <span class="descricao-texto">
                 O ClickVendas é um sistema web desenvolvido para auxiliar pequenas lojas no controle e organização de
                 seus produtos de maneira simples, prática e intuitiva. Pensado especialmente para lojistas que
@@ -93,61 +83,55 @@
             </span>
         </div>
 
-        <!--Ultimos vendidos-->
-        <h3 class="subtitulo" id="vendidos">Últimos Vendidos</h3>
+        <!-- ÚLTIMOS VENDIDOS -->
+        <h3 id="vendidos">Últimos Vendidos</h3>
         <div class="lista-ultimos">
             <div class="ultimos_vendidos">
-                <img src="assests/produtos/camisaNike.jpg" alt="imagem-produto" class="imagem-prod-vend">
+                <img src="assests/produtos/camisaNike.jpg" alt="Camisa Nike" class="imagem-prod-vend">
                 <span class="nome-produto">CAMISA NIKE
                     <img src="assests/fogo.png" alt="fire" class="fire">
                 </span>
             </div>
             <div class="ultimos_vendidos">
-                <img src="assests/produtos/tenis_lebron.jpeg" alt="imagem-produto" class="imagem-prod-vend">
+                <img src="assests/produtos/tenis_lebron.jpeg" alt="Tênis Lebron James" class="imagem-prod-vend">
                 <span class="nome-produto">TENIS LEBRON JAMES
                     <img src="assests/fogo.png" alt="fire" class="fire">
                 </span>
             </div>
             <div class="ultimos_vendidos">
-                <img src="assests/produtos/short_academia.jpg" alt="imagem-produto" class="imagem-prod-vend">
+                <img src="assests/produtos/short_academia.jpg" alt="Short Academia" class="imagem-prod-vend">
                 <span class="nome-produto">SHORT ACADEMIA
                     <img src="assests/fogo.png" alt="fire" class="fire">
                 </span>
             </div>
             <div class="ultimos_vendidos">
-                <img src="assests/produtos/garrafa.jpg" alt="imagem-produto" class="imagem-prod-vend">
+                <img src="assests/produtos/garrafa.jpg" alt="Garrafa" class="imagem-prod-vend">
                 <span class="nome-produto">GARRAFA
                     <img src="assests/fogo.png" alt="fire" class="fire">
                 </span>
             </div>
             <div class="ultimos_vendidos">
-                <img src="assests/produtos/strap.jpg" alt="imagem-produto" class="imagem-prod-vend">
+                <img src="assests/produtos/strap.jpg" alt="Strap" class="imagem-prod-vend">
                 <span class="nome-produto">STRAP
                     <img src="assests/fogo.png" alt="fire" class="fire">
                 </span>
             </div>
         </div>
 
-
-        
-        
-        <!-- LISTA -->
+        <!-- LISTA DE PRODUTOS -->
         <div class="lista-produtos" id="listagem">
             <h3>PRODUTOS</h3>
-            <div class="barra-acoes">
 
-            <div class="campo-busca">
-                <input type="text" class="input-busca" placeholder="Pesquisar">
+            <div class="barra-acoes">
+                <div class="campo-busca">
+                    <input type="text" class="input-busca" placeholder="Pesquisar">
+                </div>
+                <button class="btn-filtro ativo">TODOS</button>
+                <a href="cadastro.html" class="btn-cadastrar">
+                    Cadastrar Produto <span>+</span>
+                </a>
             </div>
 
-            <button class="btn-filtro ativo">TODOS</button>
-
-            <a href="cadastro.html" class="btn-cadastrar">
-                Cadastrar Produto <span>+</span>
-            </a>
-
-        </div>
-            
             <div class="cabecalho-lista">
                 <span class="col-produto">PRODUTOS</span>
                 <span class="col-categoria">CATEGORIA</span>
@@ -155,12 +139,12 @@
                 <span class="col-estoque">ESTOQUE</span>
                 <span class="col-status">STATUS</span>
             </div>
-            <!-- PRODUTO -->
+
             <a href="detalhes.html" class="linha-produto">
                 <div class="col-produto">
                     <div class="img-card">
                         <img src="/assests/produtos/camisaBrasil.jpeg" alt="Camisa Brasil" class="img-1">
-                        <img src="/assests/produtos/camisabrasilEscudo.jpeg" alt="Camisa Brasil" class="img-2">
+                        <img src="/assests/produtos/camisabrasilEscudo.jpeg" alt="Camisa Brasil Escudo" class="img-2">
                     </div>
                     <div class="info-produto">
                         <span class="nome-produto">Camisa Brasil</span>
@@ -176,11 +160,12 @@
                     <span class="status ativo">Ativo ●</span>
                 </div>
             </a>
+
             <a href="detalhes.html" class="linha-produto">
                 <div class="col-produto">
                     <div class="img-card">
-                        <img src="/assests/produtos/tenis.jpeg" alt="Camisa Brasil" class="img-1">
-                        <img src="/assests/produtos/tenis2.jpeg" alt="Camisa Brasil" class="img-2">
+                        <img src="/assests/produtos/tenis.jpeg" alt="Tênis Nike" class="img-1">
+                        <img src="/assests/produtos/tenis2.jpeg" alt="Tênis Nike 2" class="img-2">
                     </div>
                     <div class="info-produto">
                         <span class="nome-produto">Tênis Nike</span>
@@ -196,35 +181,35 @@
                     <span class="status ativo">Ativo ●</span>
                 </div>
             </a>
-            <!-- GRÁFICO DE VENDAS -->
-            <div id="relatorios" class="grafico-section">
-                <h3>RELATÓRIOS DE VENDAS</h3>
-                <img class="grafico-1" src="/assests/grafico-1.png" alt="">
-            </div>
-
-            <!-- PLANOS DE VENDA -->
-            <div id="planos" class="div_planos">
-                <h3>PLANOS MENSAIS</h3>
-
-                <div class="planos-container">
-                    
-                    <div class="plan1">
-                        <p class="preco">R$ 29,90</p>
-                        <h4>Plano Básico</h4>
-                    </div>
-
-                    <div class="plan2">
-                        <p class="preco">R$ 49,90</p>
-                        <h4>Plano Intermediário</h4>
-                    </div>
-                    <div class="plan3">
-                        <p class="preco">R$ 69,90</p>
-                        <h4>Plano Avançado</h4>
-                    </div>
-                    
-                </div>
 
         </div>
+        <!-- fim .lista-produtos -->
+
+        <!-- GRÁFICO DE VENDAS -->
+        <div id="relatorios" class="grafico-section">
+            <h3>RELATÓRIOS DE VENDAS</h3>
+            <img class="grafico-1" src="/assests/grafico-1.png" alt="Gráfico de vendas">
+        </div>
+
+        <!-- PLANOS -->
+        <div id="planos" class="div_planos">
+            <h3>PLANOS MENSAIS</h3>
+            <div class="planos-container">
+                <div class="plan1">
+                    <p class="preco">R$ 29,90</p>
+                    <h4>Plano Básico</h4>
+                </div>
+                <div class="plan2">
+                    <p class="preco">R$ 49,90</p>
+                    <h4>Plano Intermediário</h4>
+                </div>
+                <div class="plan3">
+                    <p class="preco">R$ 69,90</p>
+                    <h4>Plano Avançado</h4>
+                </div>
+            </div>
+        </div>
+
     </main>
 </body>
 
